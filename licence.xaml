@@ -1,0 +1,11 @@
+﻿<Window x:Class="ECSMD.licence"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ECSMD"
+        xmlns:properties="clr-namespace:ECSMD.Properties"
+        mc:Ignorable="d"
+        Title="licence" Height="450" Width="800">
+        <TextBox Text="{x:Static properties:Resources.OSS_LICENCE}" IsReadOnly="True"/>
+</Window>

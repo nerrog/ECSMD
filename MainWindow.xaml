@@ -1,0 +1,105 @@
+﻿<Window x:Class="ECSMD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ECSMD" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Epic Cities Skylines Mod Downloader" Height="450" Width="800"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="130"/>
+        </Grid.RowDefinitions>
+        <materialDesign:ColorZone
+              Mode="Inverted"
+              Padding="16">
+            <DockPanel>
+                <materialDesign:PopupBox
+                          DockPanel.Dock="Right"
+                          PlacementMode="BottomAndAlignRightEdges">
+                    <Button x:Name="licence_show" 
+                        Content="OSSライセンス" Click="licence_show_Click"/>
+
+                </materialDesign:PopupBox>
+                <StackPanel
+                    Orientation="Horizontal">
+                    <Image
+                        Source="Icon/icon.ico" Height="50" Width="50"/>
+                    <TextBlock
+                    VerticalAlignment="Center"
+                    Margin="16 0 0 0"
+                    Text="Epic Cities Skylines Mod Downloader" />
+                </StackPanel>
+            </DockPanel>
+        </materialDesign:ColorZone>
+
+
+        <GroupBox
+          Grid.Row="1"
+          Grid.Column="0"
+          Margin="0 20 0 0"
+          Header="SteamWorkshopのURL"
+          Style="{DynamicResource MaterialDesignGroupBox}"
+          materialDesign:ColorZoneAssist.Mode="SecondaryMid">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="800"/>
+                </Grid.ColumnDefinitions>
+                <TextBox
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    x:Name="MOD_URL"
+                    materialDesign:HintAssist.Hint="URL"
+                    Text="https://steamcommunity.com/sharedfiles/filedetails/?id="
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    VerticalAlignment="Center"/>
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text=""
+                    x:Name="URL_STATUS"
+                    />
+            </Grid>
+
+        </GroupBox>
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="0 20 0 10"
+            Content="OK"
+            x:Name="settings_ok" Click="settings_ok_Click"
+        />
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="1"
+            Text="ログ出力"
+            />
+        <TextBox 
+            IsReadOnly="True"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            Grid.Row="4"
+            x:Name="OUTPUT_LOG"
+            VerticalScrollBarVisibility ="Auto"
+            />
+    </Grid>
+</Window>
